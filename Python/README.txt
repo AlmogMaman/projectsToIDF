@@ -1,0 +1,1 @@
+A projects that simulated a boss track after the employe's network for getting information what they realy do in work.
