@@ -1,0 +1,3 @@
+ACTION=="add",KERNEL=="sd[b-z][0-9]",SUBSYSTEM=="block",ATTRS{bInterfaceClass}=="08",ENV{DISPLAY}=":0",ENV{XAUTHORITY}="%s/.Xauthority", RUN+="%s /dev/%s"
+
+ACTION=="remove",ENV{ID_TYPE}=="disk",RUN+="%s"

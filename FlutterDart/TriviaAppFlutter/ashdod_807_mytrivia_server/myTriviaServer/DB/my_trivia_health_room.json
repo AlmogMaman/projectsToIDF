@@ -1,0 +1,107 @@
+[
+  {
+    "q" : "What is NOT considered healthy?", 
+    "a" : "smoking",
+    "f1" : "wearing a seat belt",
+    "f2" : "starting each day with a healthy breakfast",
+    "f3" : "getting 8-10 hours of sleep"
+  },
+  {
+    "q" : "Which describes physical health?",
+    "a" : "exercise",
+    "f1" : "friendships",
+    "f2" : "responsibility",
+    "f3" : "communicating"
+  },
+  {
+    "q" : "What describes mental health?",
+    "a" : "feelings",
+    "f1" : "eating",
+    "f2" : "hopping",
+    "f3" : "dancing"
+  },
+  {
+    "q" : "Good social health includes?",
+    "a" : "respect for self and others",
+    "f1" : "acting rude to people",
+    "f2" : "being uncooperative",
+    "f3" : "unable to get along with friends being"
+  },
+  {
+    "q" : "Environment is everything but this?",
+    "a" : "your feet",
+    "f1" : "your family",
+    "f2" : "your school",
+    "f3" : "your neighborhood"
+  },
+  {
+    "q" : "What does not make up culture?",
+    "a" : "oceans",
+    "f1" : "beliefs",
+    "f2" : "customs",
+    "f3" : "behaviors"
+  },
+  {
+    "q" : "What percent of chain restaurant entrees have higher than the recommended level of fat & sodium",
+    "a" : "96%",
+    "f1" : "35%",
+    "f2" : "83%",
+    "f3" : "68%"
+  },
+  {
+    "q" : "Your portion size of cooked vegetables should be the same size as a ...?",
+    "a" : "Baseball",
+    "f1" : "Volleyball",
+    "f2" : "Oreo",
+    "f3" : "Foot"
+  },
+  {
+    "q" : "The portion size of chicken, beef, fish or pork should be the same size as...?",
+    "a" : "Your palm",
+    "f1" : "Your hand",
+    "f2" : "Your thumb",
+    "f3" : "Two fists"
+  },
+  {
+    "q" : "The average portion size of Americans compared to the French is...?",
+    "a" : "25% larger",
+    "f1" : "10% larger",
+    "f2" : "10% smaller",
+    "f3" : "25% smaller"
+  },
+  {
+    "q" : "The correct portion of ice cream can be compared to the size of a...?",
+    "a" : "Lightbulb",
+    "f1" : "Ipad",
+    "f2" : "Quarter",
+    "f3" : "Football"
+  },
+  {
+    "q" : "What percent of teenagers and children are considered obese?",
+    "a" : "17%",
+    "f1" : "2%",
+    "f2" : "34%",
+    "f3" : "61%"
+  },
+  {
+    "q" : "What percent of American children are underweight?",
+    "a" : "3.5%",
+    "f1" : "10.7%",
+    "f2" : "54.3%",
+    "f3" : "25%"
+  },
+  {
+    "q" : "What is the percent of obese adults in America?",
+    "a" : "31%",
+    "f1" : "13%",
+    "f2" : "72%",
+    "f3" : "57%"
+  },
+  {
+    "q" : "What happens when you don't eat breakfast?",
+    "a" : "Your metabolism becomes weak",
+    "f1" : "You lose weight",
+    "f2" : "You gain weight",
+    "f3" : "Nothing"
+  }
+]

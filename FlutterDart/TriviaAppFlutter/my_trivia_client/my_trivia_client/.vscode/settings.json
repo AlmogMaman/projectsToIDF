@@ -1,0 +1,22 @@
+{
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ],
+    "spellright.parserByClass": {
+        "dart": {
+            "parser": "code"
+        }
+    },
+    "cSpell.words": [
+        "my_trivia_client",
+        "plist"
+    ],
+    "cSpell.ignoreWords": [
+        "my_trivia_client"
+    ]
+}

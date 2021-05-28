@@ -1,0 +1,107 @@
+[
+  {
+    "q" : "Where should raw meat be stored in a refrigerator?",
+    "a" : "At the bottom, below all other food",
+    "f1" : "In the middle",
+    "f2" : "At the top",
+    "f3" : "Outside of him"
+  },
+  {
+    "q" : "Which one of the following practices will help to prevent foodborne illness?", 
+    "a" : "Washing your hands frequently",
+    "f1" : "Stop smoking",
+    "f2" : "Wearing an apron",
+    "f3" : "Wearing a hairnet"
+  },
+  {
+    "q" : "What is the correct temperature that frozen food should be kept at?",
+    "a" : "-18 degrees or lower",
+    "f1" : "0 degrees",
+    "f2" : "15 degrees or lower",
+    "f3" : "20 degrees or lower"
+  },
+  {
+    "q" : "Which one of the following jewellery is acceptable for a food handler to wear?",
+    "a" : "Plain wedding band",
+    "f1" : "Arm ring",
+    "f2" : "Bracelet",
+    "f3" : "A ring that is a symbol of religious faith"
+  },
+  {
+    "q" : "What is the ideal temperature for Pathogens to flourish??",
+    "a" : "37 degrees",
+    "f1" : "10 degrees",
+    "f2" : "55 degrees",
+    "f3" : "90 degrees"
+  },
+  {
+    "q" : "How many times can you reheat leftovers?",
+    "a" : "You should only reheat leftovers once",
+    "f1" : "Four times",
+    "f2" : "Twice",
+    "f3" : "As many times as you like"
+  },
+  {
+    "q" : "Which of the following meats are safe to eat when they are pink or raw?",
+    "a" : "Lamb",
+    "f1" : "Chicken",
+    "f2" : "Pork",
+    "f3" : "Minced meat"
+  },
+  {
+    "q" : "What are the basic steps for washing hands?",
+    "a" : "Apply soap, wash thoroughly, rinse and use paper towels",
+    "f1" : "Wash thoroughly with water and dry",
+    "f2" : "Apply soap, wash thoroughly",
+    "f3" : "Apply soap"
+  },
+  {
+    "q" : "The ideal temperature in your fridge should be?",
+    "a" : "1 and 4 degrees",
+    "f1" : "4 to 10 degrees",
+    "f2" : "0 to 4 degrees",
+    "f3" : "-2 to 0 degrees"
+  },
+  {
+    "q" : "Which one of the following foods is likely to contain the MOST bacteria?",
+    "a" : "Frozen raw chicken",
+    "f1" : "Recently cooked chicken",
+    "f2" : "A opened fizzy drink",
+    "f3" : "Bottled mayonnaise"
+  },
+  {
+    "q" : "How can you tell if food has enough bacteria to cause food poisoning?",
+    "a" : "You can not, it will appear normal",
+    "f1" : "It will smell",
+    "f2" : "It will have a different colour",
+    "f3" : "It will taste different"
+  },
+  {
+    "q" : "Which of the following powers do Environmental Health Officers NOT have?",
+    "a" : "The power of arrest",
+    "f1" : "Authority to enter premises without appointment",
+    "f2" : "Authority to close down premises",
+    "f3" : "The power to seize foods"
+  },
+  {
+    "q" : "Which of the following does bacteria need to assist it to grow and multiply",
+    "a" : "All of the answers right",
+    "f1" : "Water",
+    "f2" : "Food",
+    "f3" : "Warm temperatures"
+  },
+  {
+    "q" : "In a place of work, the best way to dry your hands after washing them is to",
+    "a" : "Use a paper towel",
+    "f1" : "Use a air dryer",
+    "f2" : "Just shake excess water away",
+    "f3" : "Use a cotton towel"
+  },
+  {
+    "q" : "Food contaminated with food poisoning bacteria would",
+    "a" : "Nothing is correct",
+    "f1" : "Look and taste normal",
+    "f2" : "Smell badly",
+    "f3" : "Look different"
+  }
+]

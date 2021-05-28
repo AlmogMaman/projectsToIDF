@@ -1,0 +1,279 @@
+﻿<Window x:Class="client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:client"
+        mc:Ignorable="d"
+        Closing="close_Click"
+        Title="Trivia" Height="550" Width="490">
+    
+
+    <Window.Resources>
+        <Style x:Key="myHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+        </Style>
+
+        <LinearGradientBrush x:Key="NormalBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="Transparent" Offset="0.0"/>
+                    <GradientStop Color="Black" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <SolidColorBrush x:Key="WindowBackgroundBrush" Color="Transparent" />
+
+        <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="ToggleButton">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <Border x:Name="Border" Grid.ColumnSpan="2" CornerRadius="2"
+  Background="{StaticResource NormalBrush}"
+  BorderThickness="0" />
+                <Border 
+  Grid.Column="0"
+  CornerRadius="2,0,0,2" 
+  Margin="1" 
+  Background="Transparent" 
+  BorderThickness="0,0,1,0" />
+                <Path 
+  x:Name="Arrow"
+  Grid.Column="1"     
+  HorizontalAlignment="Center"
+  VerticalAlignment="Center"
+  Data="M 0 0 L 4 4 L 8 0 Z">
+                    <Path.Fill>
+                        <SolidColorBrush Color="Black" />
+                    </Path.Fill>
+                </Path>
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="ComboBoxTextBox" TargetType="TextBox">
+            <Border x:Name="PART_ContentHost" Focusable="False" Background="Transparent" />
+        </ControlTemplate>
+
+
+        <Style x:Key="{x:Type ComboBox}" TargetType="ComboBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <ToggleButton 
+         Name="ToggleButton" 
+         Template="{StaticResource ComboBoxToggleButton}" 
+         Grid.Column="2" 
+         Focusable="True"
+         IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+         ClickMode="Press">
+                            </ToggleButton>
+                            <ContentPresenter
+        Content="{TemplateBinding ComboBox.SelectionBoxItem}" ContentTemplate="{TemplateBinding ComboBox.SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+        Name="ContentSite"
+        IsHitTestVisible="True" 
+        
+        
+        VerticalAlignment="Center"
+        HorizontalAlignment="Left" />
+                            <TextBox x:Name="PART_EditableTextBox"
+         Style="{x:Null}" 
+         Template="{StaticResource ComboBoxTextBox}" 
+         HorizontalAlignment="Left" 
+         VerticalAlignment="Center" 
+           
+         Focusable="False" 
+         Background="Transparent"
+         Visibility="Visible"
+         Foreground="Lime"
+         IsReadOnly="{TemplateBinding IsReadOnly}"/>
+                            <Popup 
+        Name="Popup"
+        Placement="Bottom"
+        IsOpen="{TemplateBinding IsDropDownOpen}"
+        AllowsTransparency="True" 
+        Focusable="False"
+        PopupAnimation="Slide">
+                                <Grid 
+          Name="DropDown"
+          SnapsToDevicePixels="True"                
+          MinWidth="{TemplateBinding ActualWidth}"
+          MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <Border 
+            x:Name="DropDownBorder"
+            Background="{StaticResource WindowBackgroundBrush}"
+            BorderThickness="1"/>
+                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                    </ScrollViewer>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        
+        <Grid.Background>
+            <ImageBrush ImageSource="Logo.png"/>
+        </Grid.Background>
+
+        <StackPanel Name="start" Margin="0,30,0,0" Visibility="Visible">
+            <TextBlock  Margin="10,75,0,0" Height="20" VerticalAlignment="Top" Foreground="Lime">User name:</TextBlock>
+            <TextBlock  Margin="10,5,0,0" Height="20" VerticalAlignment="Top" Foreground="Lime">Password:</TextBlock>
+            <TextBox Name="txtUsername" Margin="75,-45,100,0" Height="20" VerticalAlignment="Top" />
+            <PasswordBox Name="txtPassword"  Margin="75,-20,100,0" Height="20" VerticalAlignment="Top" />
+            <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="Lime" Content="Sign in" x:Name="connect" Click="BtnLoginUser_Click" Margin="0,-40,10,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Width="80"/>
+            <Button FontWeight="UltraBold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="LimeGreen" FontSize="20" Content="Sign up" x:Name="new" Click="open_singin" Margin="50,25,50,10" Height="50" Width="146" />
+        </StackPanel>
+
+        
+        <StackPanel Name="option" Height="300" VerticalAlignment="Center" Margin="0,80,0,0" Visibility="Hidden">
+            <Button FontWeight="UltraBold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="LimeGreen" FontSize="20" Content="Sign out" x:Name="out" Click="back_from_options" Margin="50,0,50,0" Height="50" Width="300" />
+            <Button FontWeight="UltraBold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="LimeGreen" FontSize="20" Content="Join room" x:Name="join" Click="get_rooms" Margin="50,10,50,10" Height="50" Width="300"/>
+            <Button FontWeight="UltraBold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="LimeGreen" FontSize="20" Content="Create room" x:Name="create" Click="open_create" Margin="50,0,50,0" Height="50" Width="300"/>
+            <Button FontWeight="UltraBold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="LimeGreen" FontSize="20" Content="My status" x:Name="status" Click="my_status" Margin="50,10,50,10" Height="50" Width="300"/>
+            <Button FontWeight="UltraBold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="LimeGreen" FontSize="20" Content="Rest scores" x:Name="scores" Click="top_players" Margin="50,0,50,0" Height="50" Width="300"/>
+        </StackPanel>
+
+
+        <StackPanel Name="Sing_up" Visibility="Hidden">
+
+            <TextBlock  Margin="10,105,0,0" Height="20" VerticalAlignment="Top" Foreground="Lime">User name:</TextBlock>
+            <TextBlock  Margin="10,5,0,0" Height="20" VerticalAlignment="Top" Foreground="Lime">Password:</TextBlock>
+            <TextBox Name="newUsername" Margin="75,-45,30,0" Height="20" VerticalAlignment="Top">user</TextBox>
+            <TextBox Name="newPassword" Margin="75,-20,30,0" Height="20" VerticalAlignment="Top">Aa12</TextBox>
+            <Button FontWeight="UltraBold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="LimeGreen" FontSize="20" Content="Sing up" x:Name="ok" Click="Singup_Click" Margin="30,50,30,10" Height="50" Width="300"/>
+            <Button FontWeight="UltraBold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="LimeGreen" FontSize="20" Content="Sing in" x:Name="back" Click="back_to_start" Margin="30,10,30,0" Height="50" Width="300"/>
+        </StackPanel>
+
+        
+        <StackPanel Name="room_list" Visibility="Hidden">
+            <ListView BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Name="list" Margin="50,130,50,13" FontWeight="Bold" Foreground="Red" Height="110" HorizontalAlignment="Center" Width="382">
+                
+                <ListView.Resources>
+                    <ResourceDictionary>
+                        <Style x:Key="hiddenStyle" TargetType="GridViewColumnHeader">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </Style>
+                    </ResourceDictionary>
+                </ListView.Resources>
+
+                <ListView.View>
+                    <GridView ColumnHeaderContainerStyle="{StaticResource myHeaderStyle}">
+                        <GridViewColumn Header="Name                            " DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Difficult                    " DisplayMemberBinding="{Binding Lvl}"/>
+                        <GridViewColumn Header="Num of players          " DisplayMemberBinding="{Binding Count}"/>
+                        <GridViewColumn HeaderContainerStyle="{StaticResource hiddenStyle}" Header="id" DisplayMemberBinding="{Binding id}"/>
+                    </GridView>
+                </ListView.View>
+                
+            </ListView>
+            <Button FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="LimeGreen" FontSize="20" Height="50" Width="300"  Click="get_rooms">refresh</Button>
+            <Button FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="LimeGreen" FontSize="20" Height="50" Width="300" Margin="0,20,0,0"  Click="join_room">join</Button>
+            <Button FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="LimeGreen" FontSize="20" Height="50" Width="300" Margin="0,20,0,0"  Click="back_from_roomList">back to menu</Button>
+        </StackPanel>
+
+
+        <StackPanel Name="create_room" Visibility="Hidden">
+            <TextBlock  Margin="10,125,0,0" Height="20" VerticalAlignment="Top" Foreground="Lime"> Room  name:</TextBlock>
+            <TextBlock  Margin="10,5,0,0" Height="20" VerticalAlignment="Top" Foreground="Lime">Max number of players:</TextBlock>
+            <TextBlock  Margin="10,5,0,0" Height="20" VerticalAlignment="Top" Foreground="Lime">Number of questions:</TextBlock>
+            <TextBlock  Margin="10,5,0,0" Height="20" VerticalAlignment="Top" Foreground="Lime">Time per question:(sec)</TextBlock>
+            <TextBox Name="room_name" Margin="140,-95,30,0" Height="20" VerticalAlignment="Top">room name</TextBox>
+            <TextBox Name="max_players" Margin="140,-70,30,0" Height="20" VerticalAlignment="Top">4</TextBox>
+            <TextBox Name="num_qw" Margin="140,-45,30,0" Height="20" VerticalAlignment="Top">4</TextBox>
+            <TextBox Name="time" Margin="140,-20,30,0" Height="20" VerticalAlignment="Top">10</TextBox>
+
+            <ComboBox Name="Difficulty" FontWeight="UltraBold" Foreground="LimeGreen" FontSize="15" Margin="30,20,30,0" Width="300">
+                <ComboBoxItem  IsSelected="True">Easy</ComboBoxItem>
+                <ComboBoxItem>Normal</ComboBoxItem>
+                <ComboBoxItem>Hard</ComboBoxItem>
+            </ComboBox>
+
+            <Button FontWeight="UltraBold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="LimeGreen" FontSize="20" Content="Create" Click="send_inf" Margin="30,75,30,10" Height="50" Width="300"/>
+            <Button FontWeight="UltraBold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="LimeGreen" FontSize="20" Content="Back" Click="back_from_create" Margin="30,10,30,0" Height="50" Width="300"/>
+        </StackPanel>
+
+
+        <StackPanel Name="room_loby" Visibility="Hidden">
+            <TextBlock Name="name" Margin="20,100,0,0" Height="20" VerticalAlignment="Top" Foreground="BlueViolet"> Room name:</TextBlock>
+            <TextBlock Name="palyers" Margin="20,5,0,0" Height="20" VerticalAlignment="Top" Foreground="BlueViolet">Max number of players:</TextBlock>
+            <TextBlock Name="questions" Margin="20,5,0,0" Height="20" VerticalAlignment="Top" Foreground="BlueViolet">Number of questions:</TextBlock>
+            <TextBlock Name="game_time" Margin="20,5,0,0" Height="20" VerticalAlignment="Top" Foreground="BlueViolet">Time to question:(sec)</TextBlock>
+            <TextBlock Name="dif_lvl" Margin="20,5,0,0" Height="20" VerticalAlignment="Top" Foreground="BlueViolet">Difficulty: </TextBlock>
+            <ListBox BorderBrush="Transparent" Background="Transparent" Name="players_list" Margin="250,-97,20,13" FontWeight="Bold" Foreground="BlueViolet" Height="100" HorizontalAlignment="Center" Width="205">
+                <ListBoxItem></ListBoxItem>
+            </ListBox>
+            <Button Name="leave_btn" FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="DarkBlue" FontSize="20" Content="leave room" Click="leave_room_loby" Margin="0,50,250,10" Height="50" Width="150"/>
+            <Button Name="start_game_btn" Visibility="Hidden" FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="DarkBlue" FontSize="20" Content="Start game" Click="start_game" Margin="0,-60,250,10" Height="50" Width="150"/>
+            <Button FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="DarkBlue" FontSize="20" Content="inf about player" Click="player_status" Margin="250,-60,0,10" Height="50" Width="180"/>
+            <Button Name="close"  Visibility="Hidden" FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="DarkBlue" FontSize="20" Content="Close room" Click="leave_room_loby" Margin="30,20,30,10" Height="50" Width="300"/>
+
+        </StackPanel>
+
+
+        <StackPanel Name="status_stack" Visibility="Hidden">
+            <TextBlock Name="player_name" Margin="20,100,0,0" Height="20" VerticalAlignment="Top" Foreground="BlueViolet">name</TextBlock>
+            <TextBlock Name="num_games" Margin="20,10,0,0" Height="20" VerticalAlignment="Top" Foreground="BlueViolet">Games played: </TextBlock>
+            <TextBlock Name="num_win_games" Margin="20,10,0,0" Height="20" VerticalAlignment="Top" Foreground="BlueViolet"> Win games: </TextBlock>
+            <TextBlock Name="right_ans" Margin="20,10,0,0" Height="20" VerticalAlignment="Top" Foreground="BlueViolet"> Right answers: </TextBlock>
+            <TextBlock Name="wrong_ans" Margin="20,10,0,0" Height="20" VerticalAlignment="Top" Foreground="BlueViolet"> Wrong answers: </TextBlock>
+            <TextBlock Name="avr_ans" Margin="20,10,0,0" Height="20" VerticalAlignment="Top" Foreground="BlueViolet"> average time per answer: </TextBlock>
+            <Button FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="DarkBlue" FontSize="20" Content="back" Click="back_from_status" Margin="0,20,0,10" Height="50" Width="180"/>
+            <Button Name="back_to_loby" FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="DarkBlue" FontSize="20" Content="back" Click="back_to_room_loby" Margin="0,-60,0,10" Height="50" Width="180"/>
+        </StackPanel>
+
+
+        <StackPanel Name="Quit" Margin="0,0,0,0" Height="30" VerticalAlignment="Bottom">
+            <Button FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="Red" Content="Quit" x:Name="exit" Click="Exit_Click" Height="20" Width="82"/>
+        </StackPanel>
+
+        
+        <StackPanel Name="gameplay" Visibility="Hidden">
+            <TextBlock Name="question" Margin="90,130,90,0" Height="20" VerticalAlignment="Center" Foreground="BlueViolet">Number of questions:</TextBlock>
+
+            <Button Name="ans1" FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="#ec9f24" FontSize="20" Content=" First answer " Click="first_ans" Margin="0,70,0,10" Height="50"/>
+            <Button Name="ans2" FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="#ec9f24" FontSize="20" Content=" Secound room " Click="secound_ans" Margin="0,10,0,10" Height="50"/>
+            <Button Name="ans3" FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="#ec9f24" FontSize="20" Content="  Third room  " Click="third_ans" Margin="0,10,0,10" Height="50"/>
+            <Button Name="ans4" FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="#ec9f24" FontSize="20" Content="  Fourth room " Click="fourth_ans" Margin="0,10,0,10" Height="50"/>
+            <Button Name="col" Visibility="Hidden" Foreground="#ec9f24"/>
+
+            <TextBlock Name="lblTime" Foreground="Red" Loaded="dtClockTime_Tick" FontSize="15" HorizontalAlignment="Right" VerticalAlignment="Center" Width="25" Height="20" Margin="0,-20,55,0">25</TextBlock>
+
+        </StackPanel>
+
+
+        <StackPanel Name="end_game" Visibility="Hidden">
+            <TextBlock Name="win_player" Margin="90,130,0,0" Height="20" VerticalAlignment="Center" Foreground="BlueViolet" >first player wins</TextBlock>
+
+            <Button FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="#ec9f24" FontSize="20" Content="Back to manu" Click="back_to_manu"  Margin="0,70,0,10" Height="50"/>
+        </StackPanel>
+
+
+        <StackPanel Name="top" Visibility="Hidden">
+            <TextBlock FontWeight="Bold" Margin="130,150,0,0" Height="20" VerticalAlignment="Center" Foreground="Gray" >TOP PLAYERS:</TextBlock>
+
+            <TextBlock Name="first" FontWeight="Bold" Margin="150,30,0,0" Height="20" VerticalAlignment="Center" Foreground="Black" >first player wins</TextBlock>
+            <TextBlock Name="secound" FontWeight="Bold" Margin="150,10,0,0" Height="20" VerticalAlignment="Center" Foreground="Black" >first player wins</TextBlock>
+            <TextBlock Name="third" FontWeight="Bold" Margin="150,10,0,0" Height="20" VerticalAlignment="Center" Foreground="Black" >first player wins</TextBlock>
+            <TextBlock Name="you" FontWeight="Bold" Margin="150,10,0,0" Height="20" VerticalAlignment="Center" Foreground="Green" >first player wins</TextBlock>
+
+            <Button FontWeight="Bold" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="Gray" FontSize="18" Content="Back to manu" Click="back_from_top"  Margin="0,70,0,10" Height="50"/>
+
+        </StackPanel>
+    </Grid>
+</Window>
+
+    
+    

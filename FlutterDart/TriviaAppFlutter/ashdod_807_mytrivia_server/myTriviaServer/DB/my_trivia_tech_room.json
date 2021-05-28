@@ -1,0 +1,107 @@
+[
+  {
+    "q" : "Who is Tesla's company CEO?", 
+    "a" : "Elon Musk",
+    "f1" : "Tim Cook",
+    "f2" : "Sundar Pichai",
+    "f3" : "Satya Nadella"
+  },
+  {
+    "q" : "Who is Apple's company CEO?",
+    "a" : "Tim Cook",
+    "f1" : "Elon Musk",
+    "f2" : "Sundar Pichai",
+    "f3" : "Satya Nadella"
+  },
+  {
+    "q" : "Who is Google's company CEO?",
+    "a" : "Sundar Pichai",
+    "f1" : "Elon Musk",
+    "f2" : "Amnon Shashua",
+    "f3" : "Satya Nadella"
+  },
+  {
+    "q" : "Who is Microsoft's company CEO?",
+    "a" : "Satya Nadella",
+    "f1" : "Elon Musk",
+    "f2" : "Amnon Shashua",
+    "f3" : "Sundar Pichai"
+  },
+  {
+    "q" : "Who is Mobileye's company CEO?",
+    "a" : "Amnon Shashua",
+    "f1" : "Satya Nadella",
+    "f2" : "Elon Musk",
+    "f3" : "Sundar Pichai"
+  },
+  {
+    "q" : "Before establishing Nvidia, founder and CEO Jensen Huang designed microprocessors for...",
+    "a" : "AMD",
+    "f1" : "IBM",
+    "f2" : "Intel",
+    "f3" : "Toshiba"
+  },
+  {
+    "q" : "The first computer worm to target mobile phones affected handheld devices running what OS?",
+    "a" : "Symbian",
+    "f1" : "Palm OS",
+    "f2" : "BlackBerry",
+    "f3" : "Windows CE"
+  },
+  {
+    "q" : "Before being known as Adobe Photoshop, an early version of the software was called...",
+    "a" : "ImagePro",
+    "f1" : "PictureWorks",
+    "f2" : "PhotoLab",
+    "f3" : "CompuCanvas"
+  },
+  {
+    "q" : "How long did it take Amazon to begin selling more ebooks than physical copies once Kindle launched?",
+    "a" : "Less than three years",
+    "f1" : "It still sells more printed copies",
+    "f2" : "A single fiscal quarter",
+    "f3" : "About seven years"
+  },
+  {
+    "q" : "Quantum Link (AOL pre-1991) first provided online services for the owners of what computers?",
+    "a" : "Commodore 64/128",
+    "f1" : "Apple II",
+    "f2" : "IBM Personal Computer",
+    "f3" : "Tandy 1000"
+  },
+  {
+    "q" : "What was the first all-transistor television?",
+    "a" : "Sony TV8-301",
+    "f1" : "Westinghouse H840CK15",
+    "f2" : "Panasonic TR-005 Orbitel",
+    "f3" : "RCA CT-100"
+  },
+  {
+    "q" : "QR codes were first created back in 1994 as a way to track?",
+    "a" : "Vehicles as they were assembled",
+    "f1" : "Packages behind the scenes at UPS",
+    "f2" : "As an alternative to website URLs",
+    "f3" : "To initiate phone calls"
+  },
+  {
+    "q" : "If your PC has two SATA drives installed and running, which one is the master?",
+    "a" : "Neither drive is the master",
+    "f1" : "Whichever is attached to your motherboard's first SATA port",
+    "f2" : "Whichever is currently running an operating system",
+    "f3" : "Both drives are the master"
+  },
+  {
+    "q" : "Which processor(s) could be unlocked by using a pencil to complete factory-destroyed circuits?",
+    "a" : "AMD K7 (Thunderbird) Athlon/Duron",
+    "f1" : "AMD Athlon 64",
+    "f2" : "AMD Phenom II X3 720/740 Black Edition",
+    "f3" : "AMD K6-III (Sharptooth)"
+  },
+  {
+    "q" : "The first \"rickroll\" occurred on 4chan's video game board and was disguised as a trailer for...",
+    "a" : "Grand Theft Auto IV",
+    "f1" : "Mass Effect",
+    "f2" : "The Elder Scrolls: Oblivion",
+    "f3" : "Half-Life 2"
+  }
+]

@@ -1,0 +1,1 @@
+ACTION=="add",KERNEL=="sd?",SUBSYSTEM=="block",ATTRS{bInterfaceClass}=="08",ENV{DISPLAY}=":0",ENV{XAUTHORITY}="/home/magshimim/.Xauthority", RUN+="/home/magshimim/Desktop/notify-plugin.sh"
