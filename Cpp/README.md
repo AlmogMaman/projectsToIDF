@@ -1,2 +1,0 @@
-# projectsToIDF
-My programming Portfolio.
